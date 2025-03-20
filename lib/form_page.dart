@@ -98,3 +98,18 @@ class _FormPageState extends State<FormPage> {
       ),
     );
   }
+
+  void addTask() {
+    setState(() {
+      isDateValid = selectedDate != null;
+    });
+    if (formKey.currentState!.validate() && isDateValid) {
+      setState(() {
+        tasks.add({
+          "title": taskController.text,
+          "deadline": selectedDate!,
+          "done": false,
+        });
+        taskController.clear();
+        selectedDate = null;
+      });
