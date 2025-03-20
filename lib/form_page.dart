@@ -167,3 +167,21 @@ class _FormPageState extends State<FormPage> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: taskController,
+                        decoration: InputDecoration(
+                          labelText: "First Name",
+                          hintText: "Enter your First Name",
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            borderSide: BorderSide(color: customColor, width: 2),
+                          ),
+                        ),
