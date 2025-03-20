@@ -185,3 +185,6 @@ class _FormPageState extends State<FormPage> {
                             borderSide: BorderSide(color: customColor, width: 2),
                           ),
                         ),
+                        validator: (value) => value == null || value.isEmpty ? "Please enter some text" : null,
+                      ),
+                    ),
