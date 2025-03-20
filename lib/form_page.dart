@@ -126,3 +126,11 @@ class _FormPageState extends State<FormPage> {
       );
     }
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Form Page'),
+        centerTitle: true,
+      ),
