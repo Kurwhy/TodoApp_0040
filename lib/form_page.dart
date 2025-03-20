@@ -134,3 +134,30 @@ class _FormPageState extends State<FormPage> {
         title: const Text('Form Page'),
         centerTitle: true,
       ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("Task Date:", style: TextStyle(fontSize: 16, color: Colors.black),), 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          selectedDate != null
+                              ? DateFormat('dd-MM-yyyy HH:mm').format(selectedDate!)
+                              : "Select a date", style: TextStyle(fontSize: 16, color: Colors.black),
+                        ),
+                        if (!isDateValid)
+                          const Text(
+                            "Please select a date",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                      ],
+                    ),
