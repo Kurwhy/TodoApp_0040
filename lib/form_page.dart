@@ -188,3 +188,11 @@ class _FormPageState extends State<FormPage> {
                         validator: (value) => value == null || value.isEmpty ? "Please enter some text" : null,
                       ),
                     ),
+                    const SizedBox(width: 10),
+                    FilledButton(
+                      onPressed: addTask,
+                      style: FilledButton.styleFrom(backgroundColor: customColor),
+                      child: const Text("Submit"),
+                    ),
+                  ],
+                ),
