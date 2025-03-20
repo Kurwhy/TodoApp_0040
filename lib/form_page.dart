@@ -201,3 +201,25 @@ class _FormPageState extends State<FormPage> {
                   "List Tasks",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: tasks.length,
+                    itemBuilder: (context, index) {
+                      final task = tasks[index];
+                      return Card(
+                        color: Colors.grey[200],
+                        child: ListTile(
+                          title: Text(task["title"], style: const TextStyle(fontWeight: FontWeight.bold)),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Deadline: ${DateFormat('dd-MM-yyyy HH:mm').format(task["deadline"])}"),
+                              Text(
+                                task["done"] ? "Done" : "Not Done",
+                                style: TextStyle(
+                                  color: task["done"] ? Colors.green : Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
