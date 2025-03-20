@@ -113,3 +113,16 @@ class _FormPageState extends State<FormPage> {
         taskController.clear();
         selectedDate = null;
       });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text("Task added successfully"),
+          backgroundColor: Colors.teal,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
+  }
