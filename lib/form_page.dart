@@ -8,8 +8,9 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController taskController = TextEditingController();
+  final List<Map<String, dynamic>> tasks = [];
+  DateTime? selectedDate;
+  bool isDateValid = true;
+  final Color customColor = Colors.deepPurple[400]!;
