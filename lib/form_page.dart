@@ -51,3 +51,15 @@ class _FormPageState extends State<FormPage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 180,
+              child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.dateAndTime,
+                initialDateTime: selectedDate ?? DateTime.now(),
+                use24hFormat: false,
+                onDateTimeChanged: (DateTime newDateTime) {
+                  selectedDate = newDateTime;
+                  isDateValid = true;
+                },
+              ),
+            ),
